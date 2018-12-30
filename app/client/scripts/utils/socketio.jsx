@@ -1,9 +1,9 @@
 // Connection to socket.io
 import io from "socket.io-client";
 const socket = io(window.location.href);
-socket.on("news", (data) => {
-    console.log(data);
-    socket.emit("frontend call", {frontend: "call backend"});
+socket.on("initial connection", (data) => {
+    console.log("> Socket Server version", data);
+    socket.emit("initial connection", {userAgent: navigator.userAgent});
 });
 
 export default socket;

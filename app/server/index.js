@@ -4,8 +4,8 @@ import db from "./database";
 module.exports = (app, io) => {
     // declare socket.io input/output
     function onConnection(socket){
-        socket.emit("news", { hello: "world" });
-        socket.on("frontend call", (data) => {
+        socket.emit("initial connection", { version: db.get("version").value() });
+        socket.on("initial connection", (data) => {
             console.log(data);
         });
         socket.on("search", (data) => {
