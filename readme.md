@@ -9,7 +9,7 @@
 此專案包括以下函式庫：
 
 專案環境
-* [Node.js](https://nodejs.org/en/)
+* [Node.js](https://nodejs.org/en/), at latest version 8.10.0.
 * [Yarn for package management](https://yarnpkg.com/lang/en/)
 
 專案語言規範：

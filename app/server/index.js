@@ -1,8 +1,5 @@
 import path from "path";
-import Lowdb from "lowdb";
-import FileSync from "lowdb/adapters/FileSync";
-
-const db = Lowdb(new FileSync(path.resolve(process.cwd(), "database/db.json")));
+import db from "./database";
 
 module.exports = (app, io) => {
     // declare socket.io input/output
