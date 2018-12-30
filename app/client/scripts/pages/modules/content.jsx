@@ -73,7 +73,11 @@ export default class Content extends React.PureComponent {
                 </tbody>
             </table>
             <hr />
+            <div className="center">
+                <h3> ≡≡≡≡≡ 搜尋結果 ≡≡≡≡≡ </h3>
                 <Report />
+                <h3> ≡≡≡≡≡ 搜尋結果 ≡≡≡≡≡ </h3>
+            </div>
             <hr />
         </div>;
     }
