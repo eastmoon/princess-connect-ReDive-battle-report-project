@@ -64,8 +64,13 @@ yarn client.dev
 產品模式執行單次應用程式啟動流程，並且以 production 設定對程式輸出進行編譯。
 
 ```
-yarn start
+yarn start [options]
 ```
+
+| 參數名稱 | 數值 | 預設值 | 說明 |
+| :--: | :-: | :-: | :-----: |
+| database | "path/file.json" | "" | 指向外部資料庫，其目錄需為完整路徑。 |
+> 參數使用範例 ```yarn start --database=disk:/path/db.json```
 
 ### 單元測試
 
