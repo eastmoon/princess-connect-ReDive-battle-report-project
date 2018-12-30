@@ -101,10 +101,10 @@ export default class Footer extends React.PureComponent {
                     <tbody>
                         <tr>
                             <th width="50%">
-                                <button onClick={() => { this.chooseATeam(); }}>己方</button>
+                                <button className="customButton" onClick={() => { this.chooseATeam(); }}>己方</button>
                             </th>
                             <th width="50%">
-                                <button onClick={() => { this.chooseBTeam(); }}>敵方</button>
+                                <button className="customButton" onClick={() => { this.chooseBTeam(); }}>敵方</button>
                             </th>
                         </tr>
                     </tbody>

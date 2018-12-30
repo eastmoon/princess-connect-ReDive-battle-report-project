@@ -64,10 +64,10 @@ export default class Content extends React.PureComponent {
                     </tr>
                     <tr>
                         <th width="50%">
-                            <button onClick={() => { this.add(); }}>新增</button>
+                            <button className="customButton" onClick={() => { this.add(); }}>新增</button>
                         </th>
                         <th width="50%">
-                            <button onClick={() => { this.search(); }}>搜尋</button>
+                            <button className="customButton" onClick={() => { this.search(); }}>搜尋</button>
                         </th>
                     </tr>
                 </tbody>
