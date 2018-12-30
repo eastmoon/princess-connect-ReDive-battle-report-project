@@ -45,30 +45,32 @@ export default class Content extends React.PureComponent {
         return <div>
             <hr />
             <table width="100%">
-                <tr>
-                    <th width="50%">
-                        己方
-                    </th>
-                    <th width="50%">
-                        敵方
-                    </th>
-                </tr>
-                <tr>
-                    <th width="50%">
-                        <Team ref={(ref) => { this.teamA = ref; }} />
-                    </th>
-                    <th width="50%">
-                        <Team ref={(ref) => { this.teamB = ref; }} />
-                    </th>
-                </tr>
-                <tr>
-                    <th width="50%">
-                        <button onClick={() => { this.add(); }}>新增</button>
-                    </th>
-                    <th width="50%">
-                        <button onClick={() => { this.search(); }}>搜尋</button>
-                    </th>
-                </tr>
+                <tbody>
+                    <tr>
+                        <th width="50%">
+                            己方
+                        </th>
+                        <th width="50%">
+                            敵方
+                        </th>
+                    </tr>
+                    <tr>
+                        <th width="50%">
+                            <Team ref={(ref) => { this.teamA = ref; }} />
+                        </th>
+                        <th width="50%">
+                            <Team ref={(ref) => { this.teamB = ref; }} />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th width="50%">
+                            <button onClick={() => { this.add(); }}>新增</button>
+                        </th>
+                        <th width="50%">
+                            <button onClick={() => { this.search(); }}>搜尋</button>
+                        </th>
+                    </tr>
+                </tbody>
             </table>
             <hr />
                 <Report />

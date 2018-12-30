@@ -88,14 +88,16 @@ export default class Footer extends React.PureComponent {
                     }
                 }/>
                 <table width="100%">
-                    <tr>
-                        <th width="50%">
-                            <button onClick={() => { this.chooseATeam(); }}>己方</button>
-                        </th>
-                        <th width="50%">
-                            <button onClick={() => { this.chooseBTeam(); }}>敵方</button>
-                        </th>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th width="50%">
+                                <button onClick={() => { this.chooseATeam(); }}>己方</button>
+                            </th>
+                            <th width="50%">
+                                <button onClick={() => { this.chooseBTeam(); }}>敵方</button>
+                            </th>
+                        </tr>
+                    </tbody>
                 </table>
                 <hr />
                 {this.renderIcon()}
