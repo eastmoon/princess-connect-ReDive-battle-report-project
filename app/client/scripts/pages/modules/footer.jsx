@@ -15,6 +15,7 @@ export default class Footer extends React.PureComponent {
         this.targetGroup = [];
     }
     chooseATeam() {
+        // Send group information to A team.
         console.log("> Choose A Team: ", this.team.members());
         const info = {
             camp: "A",
@@ -22,8 +23,13 @@ export default class Footer extends React.PureComponent {
         };
         const event = new CustomEvent("groupTeam", {detail: info});
         window.dispatchEvent(event);
+        // Clear group
+        this.targetGroup = [];
+        const characterStr = this.generateTeamList();
+        this.team.add(characterStr);
     }
     chooseBTeam() {
+        // Send group information to B team.
         console.log("> Choose B Team: ", this.team.members());
         const info = {
             camp: "B",
@@ -31,6 +37,10 @@ export default class Footer extends React.PureComponent {
         };
         const event = new CustomEvent("groupTeam", {detail: info});
         window.dispatchEvent(event);
+        // Clear group
+        this.targetGroup = [];
+        const characterStr = this.generateTeamList();
+        this.team.add(characterStr);
     }
     chooseTarget(cid) {
         console.log("> Choose : ", cid, this.characterPositionList.indexOf(cid), this.targetGroup.indexOf(cid));
