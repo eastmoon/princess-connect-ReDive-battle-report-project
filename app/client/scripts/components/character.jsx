@@ -2,7 +2,7 @@
 import React from "react";
 
 // Utils
-import {paddingZero} from "pages/modules/utils";
+import {paddingZero} from "utils/format";
 
 export default class Character extends React.PureComponent {
     constructor() {

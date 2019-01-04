@@ -20,9 +20,14 @@ module.exports = () => {
     		},
         // 頁面設定
     		pages: {
+            "record": {
+                js: "record/index.jsx",
+                template: "record/index.html",
+                lib: ["framework", "utils"]
+            },
             "index": {
-                js: "index.jsx",
-                template: "index.html",
+                js: "search/index.jsx",
+                template: "search/index.html",
                 lib: ["framework", "utils"]
             }
         },

@@ -1,9 +1,9 @@
 // Library
 import React from "react";
 // Modules
-import Team from "pages/modules/team";
+import Team from "modules/team";
 // Utils
-import {paddingZero} from "./utils";
+import {paddingZero} from "utils/format";
 // Environemt enum
 import {character} from "conf/position.json";
 
@@ -14,33 +14,11 @@ export default class Footer extends React.PureComponent {
         this.characterPositionList = character;
         this.targetGroup = [];
     }
-    chooseATeam() {
-        // Send group information to A team.
-        console.log("> Choose A Team: ", this.team.members());
-        const info = {
-            camp: "A",
-            team: this.team.members()
-        };
-        const event = new CustomEvent("groupTeam", {detail: info});
-        window.dispatchEvent(event);
-        // Clear group
-        this.targetGroup = [];
-        const characterStr = this.generateTeamList();
-        this.team.add(characterStr);
-    }
-    chooseBTeam() {
+    search() {
         // Send group information to B team.
-        console.log("> Choose B Team: ", this.team.members());
-        const info = {
-            camp: "B",
-            team: this.team.members()
-        };
-        const event = new CustomEvent("groupTeam", {detail: info});
+        console.log("> Search: ", this.team.members());
+        const event = new CustomEvent("search", {detail: this.team.members()});
         window.dispatchEvent(event);
-        // Clear group
-        this.targetGroup = [];
-        const characterStr = this.generateTeamList();
-        this.team.add(characterStr);
     }
     chooseTarget(cid) {
         console.log("> Choose : ", cid, this.characterPositionList.indexOf(cid), this.targetGroup.indexOf(cid));
@@ -97,18 +75,7 @@ export default class Footer extends React.PureComponent {
                         this.team = ref;
                     }
                 }/>
-                <table width="100%">
-                    <tbody>
-                        <tr>
-                            <th width="50%">
-                                <button className="customButton" onClick={() => { this.chooseATeam(); }}>己方</button>
-                            </th>
-                            <th width="50%">
-                                <button className="customButton" onClick={() => { this.chooseBTeam(); }}>敵方</button>
-                            </th>
-                        </tr>
-                    </tbody>
-                </table>
+                <button className="customButton" onClick={() => { this.search(); }}>搜尋</button>
                 <hr />
                 {this.renderIcon()}
             </div>

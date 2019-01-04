@@ -2,12 +2,12 @@
 import React from "react";
 
 // Utils
-import Character from "pages/components/character";
+import Character from "components/character";
 
 export default class Team extends React.PureComponent {
     constructor(props) {
         super(props);
-        console.log(props.members ? props.members : ["000", "000", "000", "000", "000"]);
+        // console.log(props.members ? props.members : ["000", "000", "000", "000", "000"]);
         this.state = {
             members: props.members ? props.members : ["000", "000", "000", "000", "000"],
             stars: []
@@ -23,7 +23,6 @@ export default class Team extends React.PureComponent {
         }
         if (temp.length > 5) {
             temp = temp.slice(1);
-            console.log(temp);
         }
         //
         this.setState({members: temp});

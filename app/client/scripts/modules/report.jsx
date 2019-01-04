@@ -23,7 +23,7 @@ export default class Report extends React.PureComponent {
         const list = [];
         const {reports} = this.state;
         reports.forEach((report, index) => {
-            console.log(report.split("-"));
+            console.log(`> report : ${report.split("-")}`);
             list.push(<Team key={report} members={report.split("-")} />);
         });
         return list;

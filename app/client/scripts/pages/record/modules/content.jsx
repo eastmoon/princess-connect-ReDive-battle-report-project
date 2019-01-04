@@ -2,8 +2,8 @@
 import React from "react";
 
 // Modules
-import Team from "pages/modules/team";
-import Report from "pages/modules/report";
+import Team from "modules/team";
+import Report from "modules/report";
 
 // utils
 import Socket from "utils/socketio";
