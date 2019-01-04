@@ -1,7 +1,7 @@
 // Library
 import React from "react";
 // Modules
-import Team from "modules/team";
+import Group from "modules/group";
 // Utils
 import {paddingZero} from "utils/format";
 // Environemt enum
@@ -76,7 +76,7 @@ export default class Footer extends React.PureComponent {
     render() {
         return <div>
             <div className="footer">
-                <Team ref={
+                <Group ref={
                     (ref) => {
                         this.team = ref;
                     }
