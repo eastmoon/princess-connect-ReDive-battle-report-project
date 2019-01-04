@@ -26,7 +26,7 @@ export const webpackConfig = {
         extensions: [".js", ".jsx", ".css", ".sass", "scss"],
         // 指定模組相對路徑
         // CONFIG.PATHS.SOURCE.ROOT, CONFIG.PATHS.SOURCE.SCRITPS
-        modules: ["node_modules", CONFIG.PATHS.SOURCE.ROOT, CONFIG.PATHS.SOURCE.SCRIPTS],
+        modules: ["node_modules", CONFIG.PATHS.SOURCE.ROOT, CONFIG.PATHS.SOURCE.SCRIPTS, CONFIG.PATHS.SOURCE.ASSETS],
         // 指定模組別名
         alias: {}
     },

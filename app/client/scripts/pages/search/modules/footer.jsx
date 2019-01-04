@@ -20,6 +20,12 @@ export default class Footer extends React.PureComponent {
         const event = new CustomEvent("search", {detail: this.team.members()});
         window.dispatchEvent(event);
     }
+    clear() {
+        // Clear group
+        this.targetGroup = [];
+        const characterStr = this.generateTeamList();
+        this.team.add(characterStr);
+    }
     chooseTarget(cid) {
         console.log("> Choose : ", cid, this.characterPositionList.indexOf(cid), this.targetGroup.indexOf(cid));
         if (this.targetGroup.length < 5 || (this.targetGroup.length === 5 && this.targetGroup.indexOf(cid) >= 0)) {
@@ -76,6 +82,7 @@ export default class Footer extends React.PureComponent {
                     }
                 }/>
                 <button className="customButton" onClick={() => { this.search(); }}>搜尋</button>
+                <button className="customButton" onClick={() => { this.clear(); }}>清除</button>
                 <hr />
                 {this.renderIcon()}
             </div>

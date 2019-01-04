@@ -27,3 +27,37 @@ body {
     height: 2em;
     margin: 0.5em;
 }
+.character {
+    width: 10em;
+    height: 10em;
+    position: relative;
+}
+.star {
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url(../images/star.png);
+    background-size: contain;
+    filter: drop-shadow(0.25em 0.25em 0.05em #000000);
+    position: absolute;
+    top: -1em;
+}
+.character .star1 {
+    @extend .star;
+    right: 0;
+}
+.character .star2 {
+    @extend .star;
+    right: 1em;
+}
+.character .star3 {
+    @extend .star;
+    right: 2em;
+}
+.character .star4 {
+    @extend .star;
+    right: 3em;
+}
+.character .star5 {
+    @extend .star;
+    right: 4em;
+}

@@ -2,7 +2,7 @@
 import React from "react";
 
 // Utils
-import Character from "components/character";
+import Selector from "components/selector";
 
 export default class Team extends React.PureComponent {
     constructor(props) {
@@ -12,6 +12,7 @@ export default class Team extends React.PureComponent {
             members: props.members ? props.members : ["000", "000", "000", "000", "000"],
             stars: []
         };
+        this.selectorList = {};
     }
     add(id) {
         // Insert
@@ -28,7 +29,11 @@ export default class Team extends React.PureComponent {
         this.setState({members: temp});
     }
     members() {
-        return this.state.members;
+        const result = [];
+        Object.keys(this.selectorList).forEach((key) => {
+            result.push(this.selectorList[key].member());
+        });
+        return result;
     }
     renderCharacter() {
         const list = [];
@@ -37,7 +42,10 @@ export default class Team extends React.PureComponent {
             const info = characterID.split("@");
             const id = info[0];
             const star = info[1];
-            list.push(<Character key={index} cid={id} star={star} />);
+            console.log(id, star);
+            list.push(<Selector key={index} cid={id} star={star} ref={(ref) => {
+                this.selectorList[index] = ref;
+            }} />);
         });
         return list;
     }
