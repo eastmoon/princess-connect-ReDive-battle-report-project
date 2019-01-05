@@ -36,7 +36,16 @@ module.exports = (app, io) => {
                 const report = db.get("report");
                 // check team report exist, if not, create first report.
                 if (report.has(team.member).value()) {
+                    // Declare result vairable
                     let result = [];
+                    // Retrieve team report
+                    let teamReport = report.get(team.member).value();
+                    // Fix old version report
+                    if (teamReport instanceof Array) {
+                        console.log(`> Fix report ${team.member} to 1-1-1-1-1 star`);
+                        report.set(team.member, {"1-1-1-1-1": teamReport}).write();
+                    }
+                    // Retrieve report
                     if (report.get(team.member).has(team.star).value()) {
                         console.log(`> report ${team.member} with ${team.star}`);
                         result = report.get(team.member).get(team.star).value();
