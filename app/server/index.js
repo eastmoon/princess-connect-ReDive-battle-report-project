@@ -47,10 +47,9 @@ module.exports = (app, io) => {
                     }
                     // Retrieve report
                     if (report.get(team.member).has(team.star).value()) {
-                        console.log(`> report ${team.member} with ${team.star}`);
                         result = report.get(team.member).get(team.star).value();
                     }
-                    console.log(result);
+                    console.log(`> search ${team.member} with ${team.star} result : \n`, result);
                     socket.emit("result", { detail: result });
                 } else {
                     console.log(`> No ${team.member} report`);
@@ -69,8 +68,9 @@ module.exports = (app, io) => {
                 const report = db.get("report");
                 // check team report exist, if not, create first report.
                 if (!report.has(teamB.member).value()) {
-                    console.log(`> New report ${teamB}`);
+                    console.log(`> New report ${teamB.member} and ${teamB.star}`);
                     report.set(teamB.member, {}).write();
+                    report.get(teamB.member).set(teamB.star, [teamA]).write();
                 } else {
                     // Retrieve team report
                     let teamReport = report.get(teamB.member).value();
