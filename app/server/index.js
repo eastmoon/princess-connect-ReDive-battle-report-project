@@ -53,6 +53,7 @@ module.exports = (app, io) => {
                     socket.emit("result", { detail: result });
                 } else {
                     console.log(`> No ${team.member} report`);
+                    socket.emit("result", { detail: [] });
                 }
             }
         });
