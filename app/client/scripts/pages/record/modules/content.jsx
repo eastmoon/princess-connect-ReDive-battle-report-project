@@ -15,7 +15,7 @@ export default class Content extends React.PureComponent {
         this.teamA = null;
         this.teamB = null;
         // Register Event
-        window.addEventListener("groupTeam", (evnet) => {
+        window.addEventListener("groupTeam", (event) => {
             this.groupTeam(event);
         });
     }
@@ -32,7 +32,7 @@ export default class Content extends React.PureComponent {
         const info = {team: this.teamB.members()};
         Socket.emit("search", info);
     }
-    groupTeam(evnet) {
+    groupTeam = (event) => {
         const {camp, team} = event.detail;
         if (camp === "A") {
             this.teamA.add(team);
@@ -40,7 +40,7 @@ export default class Content extends React.PureComponent {
         if (camp === "B") {
             this.teamB.add(team);
         }
-    }
+    };
     render() {
         return <div>
             <hr />

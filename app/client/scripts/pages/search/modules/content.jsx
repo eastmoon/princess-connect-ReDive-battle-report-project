@@ -14,7 +14,7 @@ export default class Content extends React.PureComponent {
         this.teamA = null;
         this.teamB = null;
         // Register Event
-        window.addEventListener("search", (evnet) => {
+        window.addEventListener("search", (event) => {
             const info = {team: event.detail};
             Socket.emit("search", info);
         });
