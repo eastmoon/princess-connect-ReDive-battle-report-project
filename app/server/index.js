@@ -96,4 +96,5 @@ module.exports = (app, io) => {
         });
     }
     io.on("connection", onConnection);
+    process.title = "Princess-Connect-ReDive-BRP"
 }
