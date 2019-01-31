@@ -6,6 +6,7 @@
     "test": "echo test node.js project",
     "start": "cross-env NODE_ENV=production babel-node conf/express/express.config.js",
     "stop": "pkill --signal SIGINT PCRD-BRP",
+    "restart": "yarn stop && yarn start --database=/redive/db.json",
     "dev": "cross-env NODE_ENV=development babel-node conf/express/express.dev.js",
     "client.dev": "cross-env NODE_ENV=development webpack-dev-server --config conf/webpack/webpack.config.babel.js",
     "client.build": "cross-env NODE_ENV=production webpack --progress --config conf/webpack/webpack.config.babel.js"
